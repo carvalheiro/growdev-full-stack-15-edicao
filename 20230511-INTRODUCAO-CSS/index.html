@@ -9,16 +9,26 @@
 </head>
 <body>
   <style>
-    qualelemento {
-      propriedade: valor;
-      propriedade2: valor;
+    li {
+      border-width: 1px;
+      border-style: solid;
+      border-color: red;
     }
-    qualelemento {
-      propriedade: valor;
+    #item-1-lista-ordenada {
+      border-width: 1px;
+      border-style: solid;
+      border-color: blue;
+    }
+    .positivo {
+      color: green;
+    }
+    .negativo {
+      color: red;
     }
   </style>
   <header>
-    <h1</h1>
+
+    <h1>Introducao CSS</h1>
   </header>
   <main>
     <section>
@@ -28,7 +38,7 @@
           Listas não ordenadas
         </h3>
         <ul>
-          <li>Item 1</li>
+          <li id="item-1-lista-ordenada">Item 1</li>
           <li>Item 2</li>
           <li>Item 3</li>
         </ul>
@@ -41,9 +51,9 @@
           <li>
             Item 1
             <ol>
-              <li>Item 1.1</li>
-              <li>Item 1.2</li>
-              <li>Item 1.3</li>
+              <li class="positivo">Item 1.1</li>
+              <li class="negativo">Item 1.2</li>
+              <li class="positivo">Item 1.3</li>
             </ol>
           </li>
           <li>Item 2</li>
@@ -55,8 +65,8 @@
           Listas de definição
         </h3>
         <dl>
-          <dd>Item 1</dd>
-          <dd>Item 2</dd>
+          <dd class="postivo">Item 1</dd>
+          <dd class="negativo">Item 2</dd>
           <dd>Item 3</dd>
         </dl>
       </article>
