@@ -9,18 +9,36 @@
 </head>
 <body>
   <style>
-    .positivo {
+    /* * {
+      color: yellow
+    } */
+    ol li#teste.primeiro {
+      border-color: red;
+      border-width: 1px;
+      border-style: solid;
+    }
+    p {
+      border-color: red;
+      border-width: 1px;
+      border-style: solid;
+    }
+    .secao-dois p {
+      color: red;
+      text-align: center;
+    }
+    /* .positivo {
       color: green;
     }
     .negativo {
       color: red;
-    }
+    } */
   </style>
   <header>
 
     <h1>Introducao CSS</h1>
   </header>
   <main>
+    <p>PRIMEIRO Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur facilis ea voluptas voluptatum magni ab repellendus cumque officiis beatae? Nisi ipsa aut voluptatibus cupiditate commodi quaerat explicabo laudantium omnis. Reiciendis.</p>
     <section>
       <h2>Listas</h2>
       <article>
@@ -34,14 +52,14 @@
         </ul>
       </article>
       <article>
-        <h3>
+        <h3 class="positivo">
           Listas ordenadas
         </h3>
         <ol>
           <li>
             Item 1
             <ol>
-              <li class="positivo">Item 1.1</li>
+              <li id="teste" class="positivo primeiro">Item 1.1</li>
               <li class="negativo">Item 1.2</li>
               <li class="positivo">Item 1.3</li>
             </ol>
@@ -60,6 +78,16 @@
           <dd>Item 3</dd>
         </dl>
       </article>
+    </section>
+    <section class="secao-dois">
+      <p>
+        SEGUNDO Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nesciunt distinctio ex reiciendis labore officiis sit quis quidem repellat vitae blanditiis eum ratione, at sapiente sint magnam soluta iusto temporibus!
+      </p>
+      <div>
+        <p>
+          TERCEIRO Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex atque quidem, iure libero quo voluptatum deserunt adipisci nam, nihil quam veritatis, explicabo consequatur quaerat animi voluptatibus cum porro dolore ipsam.
+        </p>
+      </div>
     </section>
   </main>
 </body>
