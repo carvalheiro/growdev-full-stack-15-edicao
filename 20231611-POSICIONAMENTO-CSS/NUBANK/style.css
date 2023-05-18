@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+}
+#header {
+  padding: 15px 48px;
+  display: flex;
+}
+#logo img {
+  width: 44px;
+}
+#login {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(130, 10, 209);
+}
+
+#menu {}
+
+#menu a {
+  color: rgb(17, 17, 17);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+main {
+  background-image: url("https://nubank.com.br/images-cms/1664201016-home-nubank-mob.jpg?w=360&dpr=1&auto=compress&q=30");
+}
+
+.conteudo-banner h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 16px;
+}
+.conteudo-banner p {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#banner form{
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+}
