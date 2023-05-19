@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0!important;
+      padding: 0!important;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      gap: 15px 24px;
+    }
+    .grid div {
+      border: 1px solid black;
+      position: relative;
+    }
+    .flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* gap: 25px; */
+    display: flex;
+    }
+    .flex {
+
+      /* border: 1px solid black; */
+      width: 25%;
+      width: 25%;
+      width: 25;
+      width: 2;
+      border: 1px solid black;
+    }
+    .teste-fixed {
+      position: fixed;
+      background: black;
+      width: 100px;
+      height: 300px;
+      bottom: 10px;
+      right: 50px;
+    }
+    .teste-absolute {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: #0080004a;
+    border-radius: 50%;
+    color: transparent;
+    top: 0;
+    transform: translateX(50%) translateY(-50%);
+}
+  </style>
+</head>
+<body>
+  <div style="border: 1px solid blue">
+    <h1>
+      Lorem ipsum dolor sit amet.
+    </h1>
+    <p class="teste-fixed">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, expedita.
+      <span style="color: red">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, ipsam.</span>
+      <b>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+      </b>
+    </p>
+  </div>
+  <ul>
+    <li>
+      <h1>Teste</h1>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+  <div style="border: 1px solid red">
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <hr style="margin-top: 20px!important;margin-bottom: 20px!important;">
+  <h2>Display Grid</h2>
+  <div class="grid">
+    <div>
+      <h3 class="teste-absolute">Item 1</h3>
+      <p>Descricão Item 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia maxime dolore quae est recusandae officia illo culpa! Quas sunt tempora sequi iusto ab laudantium a inventore! Quaerat obcaecati nostrum officiis.</p>
+    </div>
+    <div>
+      <h3>Item 2</h3>
+      <p>Descricão Item 2</p>
+    </div>
+    <div>
+      <h3>Item 3</h3>
+      <p>Descricão Item 3</p>
+    </div>
+    <div>
+      <h3>Item 4</h3>
+      <p>Descricão Item 4</p>
+    </div>
+    
+  </div>
+  <hr style="margin-top: 20px!important;margin-bottom: 20px!important;">
+  <h2>Display Flex</h2>
+  <div class="flex">
+    <div>
+      <h3>Item 1</h3>
+      <p>Descricão Item 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia maxime dolore quae est
+        recusandae officia illo culpa! Quas sunt tempora sequi iusto ab laudantium a inventore! Quaerat obcaecati nostrum
+        officiis.</p>
+    </div>
+    <div>
+      <h3>Item 2</h3>
+      <p>Descricão Item 2</p>
+    </div>
+    <div>
+      <h3>Item 3</h3>
+      <p>Descricão Item 3</p>
+    </div>
+    <div>
+      <h3>Item 4</h3>
+      <p>Descricão Item 4</p>
+    </div>
+  </div>
+</body>
+</html>
