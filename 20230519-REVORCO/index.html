@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    div {
+      height: 300px;
+      background-color: gray;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    section {
+      height: 50%;
+      background-color: red;
+      width: calc(100% + 25px);
+      max-width: unset;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div>
+    <section></section>
+  </div>
+</body>
+</html>
