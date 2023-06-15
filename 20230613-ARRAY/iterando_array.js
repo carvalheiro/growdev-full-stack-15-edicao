@@ -10,6 +10,7 @@ numeros[3] = 4;
 let soma = 0;
 
 for (let posicao = 0; posicao <= 3; posicao++) {
+  const itemAtual = numeros[posicao];
   console.log("Nessa posicao, o valor é: " + numeros[posicao]);
   soma = soma + numeros[posicao];
 }
