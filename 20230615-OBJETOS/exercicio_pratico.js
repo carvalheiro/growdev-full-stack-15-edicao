@@ -47,9 +47,3 @@ for (const funcionario of listaFuncionario) {
   funcionario.notas10 = nota10;
   funcionario.notas1 = nota1;
 }
-
-console.log(
-  "Segue a lista de funcionarios com as respectivas notas que voce precisa separar:"
-);
-
-console.log(listaFuncionario);
