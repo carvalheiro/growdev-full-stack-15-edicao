@@ -25,7 +25,9 @@ let contador = 2;
 const app = express();
 
 app.use(express.json());
-
+app.get("/", function (requisicao, resposta) {
+  resposta.send("Olá mundo");
+});
 app.post("/teste", function (requisicao, resposta) {
   console.log(requisicao.body);
   resposta.send("Olá mundo");
@@ -116,6 +118,22 @@ app.post("/cadastro-de-usuario", function (requisicao, resposta) {
   console.log(usuarios);
   // AQUI DENTRO VAI A REGRA PARA CADASTRAR USUÁRIOS
   contador++;
+});
+
+app.postd("/criar-recados", function (requisicao, resposta) {
+  resposta.send("criar recados");
+});
+
+app.get("/deletar-recados", function (requisicao, resposta) {
+  resposta.send("deletar recados");
+});
+
+app.get("/atualizar-recados", function (requisicao, resposta) {
+  resposta.send("atualizar recados");
+});
+
+app.get("/listar-recados", function (requisicao, resposta) {
+  resposta.send("listar recados");
 });
 
 app.listen(3000, function () {
