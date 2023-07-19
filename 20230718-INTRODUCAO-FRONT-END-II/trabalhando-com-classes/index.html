@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section id="secao-principal" class="secao">
+    <h1>
+      Principal
+    </h1>
+    <img
+      src="https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg"
+      alt=""
+      id="imagem-principal"
+      >
+  </section>
+  <section id="lista-de-contatos" class="secao">
+    <h1>
+      Lista de contatos
+    </h1>
+    <ul>
+      <li class="contato-linkedin">
+        <a href="https://www.linkedin.com/in/carvalheiro/">Thiago Carvalheir</a>
+      </li>
+      <li class="contato-linkedin segundo">
+        <a href="https://www.linkedin.com/in/bruno-oliveira-6b1b0b1b/">Bruno Oliveira</a>
+      </li>
+    </ul>
+  </section>
+  <script>
+    const primeiraSecao = document.querySelector('#secao-principal');
+    console.log(primeiraSecao)
+    
+    // lista de classes
+    console.log(primeiraSecao.classList)
+
+    //buscar uma classe especifica
+    console.log(primeiraSecao.classList.contains('secao'))
+      console.log(primeiraSecao.classList.contains('teste'))
+
+    // adicionar uma classe
+    primeiraSecao.classList.add('nova-classe')
+    console.log(primeiraSecao.classList.contains('nova-classe'))
+
+    // remover uma classe
+    primeiraSecao.classList.remove('nova-classe')
+    console.log(primeiraSecao.classList.contains('nova-classe'))
+    primeiraSecao.classList.add('teste2', 'teste3')
+
+    
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section id="secao-principal" class="secao">
+    <h1>
+      Principal
+    </h1>
+    <img
+      src="https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg"
+      alt=""
+      id="imagem-principal"
+      >
+  </section>
+  <section id="lista-de-contatos" class="secao">
+    <h1>
+      Lista de contatos
+    </h1>
+    <ul>
+      <li class="contato-linkedin">
+        <a href="https://www.linkedin.com/in/carvalheiro/">Thiago Carvalheir</a>
+      </li>
+      <li class="contato-linkedin segundo">
+        <a href="https://www.linkedin.com/in/bruno-oliveira-6b1b0b1b/">Bruno Oliveira</a>
+      </li>
+    </ul>
+  </section>
+  <script>
+    const imagem = document.querySelector('img');
+    console.log(imagem.src);
+    // acessando atraves de propriedade
+    console.log(imagem.src)
+    console.log(imagem.id )
+    // modificando atraves de propriedade
+    imagem.src = 'https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+    imagem.id = "novo-id"
+
+    // acessar através de metodo
+    console.log(imagem.getAttribute("src"))
+    console.log(imagem.getAttribute("id"))
+
+    // através de um método
+    imagem.setAttribute("src", "https://img.freepik.com/fotos-gratis/uma-imagem-de-um-planeta-com-um-buraco-negro-no-centro-e-um-buraco-negro-no-centro_1340-23795.jpg")
+    imagem.setAttribute("id", "testando-attributo")
+    
+    
+
+
+  </script>
+</body>
+
+</html>

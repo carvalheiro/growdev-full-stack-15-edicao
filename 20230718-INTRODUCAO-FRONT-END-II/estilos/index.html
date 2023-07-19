@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body.ativo {
+      background-color: blue!important;
+    }
+  </style>
+</head>
+
+<body style="color: red; transition: all 1s">
+  <section id="secao-principal" class="secao">
+    <h1>
+      Principal
+    </h1>
+    <img
+      src="https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg"
+      alt=""
+      id="imagem-principal"
+      >
+  </section>
+  <section id="lista-de-contatos" class="secao">
+    <h1>
+      Lista de contatos
+    </h1>
+    <ul>
+      <li class="contato-linkedin">
+        <a href="https://www.linkedin.com/in/carvalheiro/">Thiago Carvalheir</a>
+      </li>
+      <li class="contato-linkedin segundo">
+        <a href="https://www.linkedin.com/in/bruno-oliveira-6b1b0b1b/">Bruno Oliveira</a>
+      </li>
+    </ul>
+  </section>
+  <script>
+    const body = document.body;
+
+    body.style.color = 'blue';
+    body.style.backgroundColor = 'black';
+    
+    const primeiraSecao = document.querySelector('#secao-principal');
+    primeiraSecao.style.backgroundColor = 'red';
+    primeiraSecao.style.color = 'white';
+    console.log(primeiraSecao.style.color)
+    body.addEventListener("click", function(){
+      body.classList.add("ativo");
+    })
+
+
+
+  </script>
+</body>
+
+</html>

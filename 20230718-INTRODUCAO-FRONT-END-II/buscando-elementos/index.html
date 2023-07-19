@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="secao-principal" class="secao">
+    <h1>
+      Principal
+    </h1>
+    <img src="https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg" alt="">
+  </section>
+  <section id="lista-de-contatos" class="secao">
+    <h1>
+      Lista de contatos
+    </h1>
+    <ul>
+      <li class="contato-linkedin">
+        <a href="https://www.linkedin.com/in/carvalheiro/">Thiago Carvalheir</a>
+      </li>
+      <li class="contato-linkedin segundo">
+        <a href="https://www.linkedin.com/in/bruno-oliveira-6b1b0b1b/">Bruno Oliveira</a>
+      </li>
+    </ul> 
+  </section>
+  <script>
+    console.log('Hello World');
+    // buscar elemento atraves de um seletor de css
+    console.log(document.querySelector('ul li'));
+    // buscar todos os elementos atraves de um seletor de css
+    console.log(document.querySelectorAll('ul li'));
+
+    // buscar elemento atraves de uma classe
+    console.log(document.getElementsByClassName('contato-linkedin'));
+    console.log(document.getElementsByClassName('secao'));
+    console.log(document.getElementsByClassName('contato-linkedin segundo'));
+
+    // buscar elemento atraves de um id
+    console.log(document.getElementById('lista-de-contatos'));
+
+    // buscar elemento atraves de uma tag
+    console.log(document.getElementsByTagName('a'));
+
+    // buscando attributos
+    console.log(document.querySelector('#secao-principal').getAttribute('class'));
+    console.log(document.getElementById('secao-principal').getAttribute('class'));
+    
+    
+  </script>
+</body>
+</html>
