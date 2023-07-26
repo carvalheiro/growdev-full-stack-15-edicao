@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: white;
+      color: black;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    body.dark {
+      background-color: black;
+      color: white;
+    }
+    button {
+      font-size: 20px;
+      background-color: #00bfff;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      color: black;
+      font-size: 20px;
+      flex-grow: 1;
+      background-color: bisque;
+    }
+    body.dark #output {
+      background-color: #303030;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav>
+
+    <button id="codigo_axios">
+      CODIGO FONTE DO AXIOS
+    </button>
+    <button id="pedrao">
+      REQUICAO PEDRAO
+    </button>
+    <button id="paisagem">
+      RELAXAR COM UMA PAISAGEM
+    </button>
+    <button id="tema">
+      ALTERNAR MODO ESCURO 
+    </button>
+  </nav>
+  <div id="output">
+  </div>
+  <script src="./index.js">
+
+  </script>
+</body>
+
+</html>
