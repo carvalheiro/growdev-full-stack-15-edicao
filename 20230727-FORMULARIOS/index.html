@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #efefef;
+    }
+    form {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+      border: none;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      padding: 10px 15px;
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+  <form action="https://www.w3schools.com/" target="_blank">
+    <h1>
+      Formulário 1
+    </h1>
+    <label>
+      <span>Numero:</span>
+      <input  name="numero" placeholder="Numero" required min="5" type="number" /> 
+
+    </label>
+    <input placeholder="Email" name="email" type="email" />
+    <input placeholder="Senha" name="senha" type="password" />
+    <input type="submit" value="Submter" />
+
+    <label>
+      <input required name="concorda" type="checkbox" />
+      Li e concordo com os termos de condições 
+    </label>
+    <b>
+      Selecione o seu time
+    </b>
+    </ul>
+      <li>
+        <label>
+          <input required name="time" type="radio" value="gremio" />
+          Gremio
+        </label>
+      </li>
+      <li>
+        <label>
+          <input required name="time" type="radio" value="temoutro?" />
+          Tem outro?
+        </label>
+      </li>
+    </ul>
+    <button type="submit">
+      SUBMIT
+    </button>
+
+  </form>
+  <form>
+    <h1>
+      Formulário 2
+    </h1>   
+    <input placeholder="Data" type="date" />
+    <input placeholder="checkbox" type="checkbox" checked />
+    <input placeholder="radio" type="radio" checked />
+    <select placeholder="Selecao">
+      <option value="1">Opcao 1</option>
+      <option value="1">Opcao 2</option>
+      <option value="1">Opcao 3</option>
+    </select>
+    <textarea width="500px" placeholder="Textarea" >
+      fsdopaifhsdapi
+    </textarea>
+    <button type="submit">
+      SUBMIT
+    </button>
+  </form>
+</body>
+</html>
