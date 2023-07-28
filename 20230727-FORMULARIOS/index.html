@@ -25,10 +25,14 @@
   </style>
 </head>
 <body>
+  <button>
+    alterar valor input
+  </button>
   <form action="https://www.w3schools.com/" target="_blank">
     <h1>
       Formulário 1
     </h1>
+    <input placeholder="Text" type="text" />
     <label>
       <span>Numero:</span>
       <input  name="numero" placeholder="Numero" required min="5" type="number" /> 
@@ -36,7 +40,6 @@
     </label>
     <input placeholder="Email" name="email" type="email" />
     <input placeholder="Senha" name="senha" type="password" />
-    <input type="submit" value="Submter" />
 
     <label>
       <input required name="concorda" type="checkbox" />
@@ -68,7 +71,7 @@
     <h1>
       Formulário 2
     </h1>   
-    <input placeholder="Data" type="date" />
+    <input name="texto" placeholder="Data" type="date" />
     <input placeholder="checkbox" type="checkbox" checked />
     <input placeholder="radio" type="radio" checked />
     <select placeholder="Selecao">
@@ -83,5 +86,9 @@
       SUBMIT
     </button>
   </form>
+  <script src="./index.js">
+
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  hello World
+  <main>
+    <form id="local-storage">
+      <h1>Usuario</h1>
+      <input placeholder="Nome" name="nome" required type="text" />
+      <input placeholder="Sobrenome" name="sobrenome" required type="text" />
+      <button type="submit">Logar</button>
+    </form>
+  </main>
+  <script>
+    const storage = sessionStorage.getItem('usuario');
+    const storageObj = JSON.parse(storage);
+    const form = document.getElementById('local-storage');
+    const nome = document.querySelector('input[name="nome"]');
+    const sobrenome = document.querySelector('input[name="sobrenome"]');
+    if(storageObj) {
+      nome.value = storageObj.nome;
+      sobrenome.value = storageObj.sobrenome;
+    }
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const objeto = {
+        nome: nome.value,
+        sobrenome: sobrenome.value
+      }
+
+      sessionStorage.setItem('usuario', JSON.stringify(objeto));
+    });
+  </script>
+</body>
+</html>
