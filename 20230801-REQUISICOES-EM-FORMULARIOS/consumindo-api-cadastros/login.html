@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="formulario-login">
+    <input id="email" type="email" required name="email" value="admin@dominio.com">
+    <input id="senha" type="password" required name="password" value="password" >
+    <button type="submit">
+      Login
+    </button>
+  </form>
+  <div id="feedback"></div>
+
+  <script>
+    const form = document.getElementById('formulario-login');
+    form.addEventListener("submit", function (evento) {
+      evento.preventDefault();
+
+      const email  = document.querySelector("#email").value
+      const senha = document.querySelector("#senha").value
+
+      console.log('submit', email, senha)
+    })
+  </script>
+</body>
+</html>
