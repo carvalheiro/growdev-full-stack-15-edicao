@@ -1,34 +1,35 @@
-import express from 'express';
-import { readFile } from 'fs';
-import { userRouter } from './user/user_routes.js';
-import { messageRouter } from './message/message_routes.js';
+import express from "express";
+import { readFile } from "fs";
+import { userRouter } from "./user/user_routes.js";
+import { messageRouter } from "./message/message_routes.js";
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-requested-with');
-    next()
-  });
-
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, x-requested-with"
+  );
+  next();
+});
 
 app.use(userRouter);
 app.use(messageRouter);
 
 //read the config file for Postman
-let postmanConfig = '';
-readFile("postman_collection.json", 'utf8', (err, data) => {
-    if (err) throw err;
-    postmanConfig = data;
+let postmanConfig = "";
+readFile("postman_collection.json", "utf8", (err, data) => {
+  if (err) throw err;
+  postmanConfig = data;
 });
 
 //home route
-app.get('/', (req, res) => {
-
-    res.send(`
+app.get("/", (req, res) => {
+  res.send(`
 <html>
 <head>
     <title>API Recados</title>
@@ -40,7 +41,8 @@ ${postmanConfig}
 </pre>
 </html>
     `);
-
 });
 
-app.listen(80);
+app.listen(80, function () {
+  console.log("API inciada. Acesse em http://localhost:80");
+});

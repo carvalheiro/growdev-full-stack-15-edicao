@@ -2,3 +2,32 @@
   titulo
   descricao
  -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+ </head>
+ <body>
+  <form id="formulario-recados">
+    <input type="text" placeholder="Titulo" required name="titulo" />
+    <textarea type="text" placeholder="Descricao" required name="descricao"></textarea>
+    <button>
+      Cadastrar Recado
+    </button>
+  </form>
+  <script>
+    const form = document.getElementById('formulario-recados');
+    form.addEventListener("submit", function (evento) {
+      evento.preventDefault();
+      const titulo = form.querySelector("input[name='titulo']").value
+      const descricao = form.querySelector("textarea[name='descricao']").value
+      console.log('submit', titulo, descricao)
+    })
+  </script>
+ </body>
+ </html>

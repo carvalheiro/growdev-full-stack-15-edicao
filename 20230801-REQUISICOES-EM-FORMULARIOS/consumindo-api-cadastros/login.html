@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=\, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 <body>
   <form id="formulario-login">
@@ -13,9 +14,12 @@
       Login
     </button>
   </form>
-  <div id="feedback"></div>
+  <div id="feedback">
+
+  </div>
 
   <script>
+    const feedback = document.getElementById('feedback');
     const form = document.getElementById('formulario-login');
     form.addEventListener("submit", function (evento) {
       evento.preventDefault();
@@ -24,6 +28,20 @@
       const senha = document.querySelector("#senha").value
 
       console.log('submit', email, senha)
+      // metodo POST
+      // url: http://localhost:80/user/login
+      // Body: JSON { email, password }
+      axios.post('http://localhost:80/user/login', {
+        email: email,
+        password: senha,
+      })
+      .then(function (param) {
+        console.log(param)
+        feedback.innerHTML = 'Login realizado com sucesso'
+      }).catch(function (param) {
+        console.log(param)
+        feedback.innerHTML = 'Erro ao realizar login <br/>' + param.response.data;
+      })
     })
   </script>
 </body>

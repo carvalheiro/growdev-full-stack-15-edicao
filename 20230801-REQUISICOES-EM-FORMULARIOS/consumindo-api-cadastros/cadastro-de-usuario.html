@@ -3,3 +3,49 @@
   email
   senha
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+  <form id="formulario-usuario">
+    <input type="text" placeholder="Nome" required name="nome" />
+    <input type="email" placeholder="Email" required name="email" />
+    <input type="password" placeholder="Senha" required name="senha" />
+    <button>
+      Cadastrar Usuario
+    </button>
+  </form>
+  <script>
+    const form = document.getElementById('formulario-usuario');
+    form.addEventListener("submit", function (evento) {
+      evento.preventDefault();
+      const nome = form.querySelector("input[name='nome']").value
+      const email = form.querySelector("input[name='email']").value
+      const senha = form.querySelector("input[name='senha']").value
+      // URL http://localhost:80/user
+      // METODO POST
+      // BODY JSON { name, email, password }
+      axios.post('http://localhost:80/user', {
+        name: nome,
+        email: email,
+        password: senha,
+      })
+      .then(function (param) {
+        console.log(param)
+        alert('Usuario cadastrado com sucesso')
+      }).catch(function (param) {
+        console.log(param)
+        alert('Erro ao cadastrar usuario')
+        alert(param.response.data)
+      })
+    })
+  </script>
+
+  
+</body>
+</html>

@@ -1,1 +1,4 @@
 Final project for the module "Backend Introduction" of the course "Starter Fullstack Developer" from Growdev
+## GUIA PARA RODAR O PROJETO
+1. `npm install`
+2. `node ./src/index.js`
