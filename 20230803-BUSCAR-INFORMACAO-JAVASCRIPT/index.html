@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Recados</h1>
+  <div id="recados">
+
+  </div>
+  <script>
+      // metodo GET
+      // http://localhost/user_messages/1
+      // body da requisao é vazio
+      // query parametros = pagina=NumeroDaPaginaDesejada
+      // RETORNO: JSON [{id: numero, userId: numero, title: string, description: string}]
+      // passo 1: buscar os recados
+
+      // const promise = axios.get('http://localhost/user_messages/1')
+      const promesa = axios.get('http://localhost/user_messages/1?pagina=5')
+      console.log(promesa)
+      console.log("teste")
+      // passo 2: quando os recados chegarem, eu vou mostrar eles na tela
+      promesa.then(function (resposta) {
+        // passo 3: pegar os recados
+        const recados = resposta.data
+
+        console.log(recados)
+
+        // passo 4: mostrar os recados na tela
+        // ul
+        //  li
+        //    ID do usuario: 1, Titulo: "titulo", Descricao: "descricao"
+
+        const div = document.getElementById('recados')
+        let html = '<ul>'
+          // //usando o forof
+          // for(const rercado of recados){
+          //   // INICIO li 
+          //   html += '<li>'
+          //   html+= '<strong>ID do usuario</strong>: '
+          //   html+= rercado.userId
+          //   html+= ', <strong>Titulo</strong>: '
+          //   html+= rercado.title
+          //   html+= ', <strong>Descricao</strong>: '
+          //   html+= rercado.description
+          //   html+= '</li>'
+          //   // FIM li
+          // }
+          //usando o foreach
+          recados.forEach(function (recado) {
+            // INICIO li 
+            html += '<li>'
+            html+= '<strong>ID do usuario</strong>: '
+            html+= recado.userId
+            html+= ', <strong>Titulo</strong>: '
+            html+= recado.title
+            html+= ', <strong>Descricao</strong>: '
+            html+= recado.description
+            html+= '</li>'
+            // FIM li
+          });
+
+        html+= '</ul>'
+        div.innerHTML = html
+
+        // passo 5: adicionar ul na tela
+      })
+      
+      
+      
+      // div.innerHTML = ''
+      </script>
+</body>
+</html>

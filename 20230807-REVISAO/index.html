@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="teste" type="checkbox" placeholder="teste" />
+  <label>
+    <input type="radio" placeholder="teste" value="gremio" name="time" />
+    <span>Gremio</span>
+  </label>	
+  <label>
+    <input type="radio" placeholder="time" value="tem outro?" name="time" />
+    <span>Tem outro? </span>
+  </label>	
+  
+  <script >
+    const radios = document.querySelectorAll('input[name="time"]')
+    let selecionado = undefined;
+    for(const radio of radios){
+      if(radio.checked) {
+        selecionado = radio;
+        break;
+      }
+    }
+    console.log(radio1.checked, radio1.value)
+  </script>
+</body>
+</html>
