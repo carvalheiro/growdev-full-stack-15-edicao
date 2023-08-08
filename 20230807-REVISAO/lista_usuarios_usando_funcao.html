@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+  <form>
+    <input type="number" required placeholder="pagina:" min="0" name="pagina">
+    <button id="carregar-lista">
+      Carregar lista
+    </button>
+  </form>
+  <nav>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </nav>
+  <main>
+   
+  </main>
+  <script>
+    const input = document.querySelector('input[name="pagina"]')
+      
+    // carrega alista de usuarios dado uma pagina
+    // pagina é um numero inteiro
+    function carregarLista (pagina) {
+      // INFORMAÇÕES DA REQUISIÇÃO (SEMPRE PREENCHER INFORMAÇÕES ABAIXO)
+      // METODO: GET
+      // URL: https://reqres.in/api/users?page=valor
+      // PARAMETROS: (query):
+      //    - page (numero da pagina);
+      // BODY: NENHUM
+      // INFORMAÇÕES DE RESPONSA (SEMPRE PREENCHER INFORMAÇÕES ABAIXO)
+      // LOCAL DA RESPOSTA: BODY
+      // TIPO DA RESPOSTA: JSON
+      // FORMA DA RESPOSTA:
+      // {
+      //   "page": é pagina atual,
+      //   "per_page": é quantidade de items por pagina,
+      //   "total": é quantidade total de items,
+      //   "total_pages": é quantidade total de paginas,
+      //   "data": é uma lista de usuarios -> [
+      //     {
+      //       "id": id do usuario,
+      //       "email": email do usuario,
+      //       "first_name": primeiro nome do usuario,
+      //       "last_name": segundo nome do usuario,
+      //       "avatar": URL caminho de uma imagem do usuario
+      //     },
+      //   ]
+      // }
+
+      // BOILER PLATE REQUISIÇÃO 
+      // Sempre que for realizar uma requisicao para a api, é só copiar e colar esse código e alterar o que for necessário
+      // url é o caminho da api
+      // segundo parametro é um objeto que será enviado no body como um json. ele é opicional (sim escrevi opicional errado pra ver quem leu)
+      // o axios retorna uma promise, então é necessário usar o then e o catch para tratar o sucesso e o erro
+      // **necessário adicionar o script do axios no html antes de usar!!**
+      axios.get('https://reqres.in/api/users?page=' + pagina)
+        .then(function (response) {
+          // o body da resposta é acessado pelo response.data
+          const body = response.data
+          // proibe usuário de digitar uma pagina maior que o total de paginas
+          input.max = body.total_pages
+          
+          const main = document.querySelector('main')
+          let html = ''
+          html += '<b>Usuarios Por Página:</b> ' + body.per_page + ';'
+          html += '<br>'
+          html += '<b>Usuário total</b>: ' + body.total + ';'
+          html += '<br>'
+          html += '<b>Pagina Atual</b>: ' + body.page + ';'
+          html += '<br>'
+          html += '<b>Total de Páginas</b>: ' + body.total_pages + ';'
+          html += '<h1>Lista de usuarios da pagina</h1>'
+          html += '<ul>'
+          for (const usuario of body.data) {
+            // INICIO DO HTML DE UM USUARIO
+            html += '  <li>'
+            html += '    <img src="' + usuario.avatar + '" alt="">'
+            html += '    <p><strong>Nome:</strong> ' + usuario.first_name + ' ' + usuario.last_name + ' </p>'
+            html += '    <p><strong>Email:</strong> ' + usuario.email + '</p>'
+            html += '  </li>'
+            // FIM DO HTML DE UM USUARIO
+          }
+          html += '</ul>'
+          console.log(html)
+          main.innerHTML = html
+        })
+        .catch(function (error) {
+          // código de erro aqui
+        })
+    }
+
+
+    // passos para adicionar um evento:
+    // 1. selecionar o elemento
+    // 2. adicionar o evento: elemento.addEventListener('evento', callback)
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', function (batata) {
+      batata.preventDefault()
+      // ao clicar, fazer uma requisição pra uma api
+      // 1. fazer a requisição
+      // 2. pegar a resposta
+      // 3. trabalhar a respota e adicionar html na tela (tag main)
+      const pagina = input.value
+      carregarLista(pagina)
+    })
+     
+    const botoes = document.querySelectorAll('nav button')
+    for (const botao of botoes) {
+      botao.addEventListener('click', function () {
+        const pagina = botao.innerText
+        carregarLista(pagina)
+      })
+    }
+  </script>
+</body>
+</html>
