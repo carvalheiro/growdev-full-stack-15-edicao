@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .grupo-geral {
+      width: 100%;
+      display: flex;
+    }
+    article {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    article img {
+      width: 250px;
+    }
+    @media (max-width: 1000px) {
+      .grupo-geral {
+        flex-direction: column;
+      }
+      article {
+        width: 100%;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+      article {
+        flex-direction: column;
+      }
+
+      article img {
+        width: 100%;
+      }
+      
+    }
+
+    @media print {
+      body {
+        border: 1px solid black;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <main>
+    <div class="grupo-geral" >
+      <article>
+        <img src="https://t3.ftcdn.net/jpg/03/27/55/60/360_F_327556002_99c7QmZmwocLwF7ywQ68ChZaBry1DbtD.jpg" alt="">
+        <div>
+          <h2>Titulo da noticia</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        </div>
+      </article>
+      <article>
+        <img src="https://t3.ftcdn.net/jpg/03/27/55/60/360_F_327556002_99c7QmZmwocLwF7ywQ68ChZaBry1DbtD.jpg" alt="">
+        <div>
+          <h2>Titulo da noticia</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

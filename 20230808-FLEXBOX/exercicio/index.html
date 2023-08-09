@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list {
+      display: flex;
+      gap: 50px;
+    }
+    .list article {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      background-color: white;
+    }
+    .list article img {
+      width: 100px;
+      height: 100px;
+    }
+    .list article div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- lista de noticias: imagem laterla, titulo e descrição abaixo -->
+  <div class="list">
+    <article>
+      <img src="https://picsum.photos/200/300" alt="">
+      <div>
+        <h2>Titulo da noticia</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      </div>
+    </article>
+    <article>
+      <img src="https://picsum.photos/200/300" alt="">
+      <div>
+        <h2>Titulo da noticia</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
