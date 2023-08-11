@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      animation-name: circularTela;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+
+    }
+    /* a div vai ter que circular toda a tela */
+
+    @keyframes circularTela {
+      0% {
+        top: 0;
+        left: 0;
+        transform: translateX(0%) translateY(0%);
+        background-color: black;
+      }
+      25% {
+        top: 0;
+        left: 100%;
+        transform: translateX(-100%) translateY(0%);
+        background-color: red;
+      }
+      50% {
+        top: 100%;
+        left: 100%;
+        transform: translateX(-100%) translateY(-100%);
+        background-color: blue;
+
+      }
+      75% {
+        top: 100%;
+        left: 0;
+        transform: translateX(0%) translateY(-100%);
+        background-color: yellow;
+
+      }
+      100% {
+        top: 0;
+        left: 0;
+        transform: translateX(0%) translateY(0%);
+        background-color: black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    .cavalos div {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-left: 0;
+      transition: 3s;
+    }
+    
+    
+    #cavalo1 {
+      background: red;
+      transition-timing-function: linear; /* mesma velocidade sempre */ 
+    }
+    #cavalo2 {
+      background: black;
+      transition-timing-function: ease-in; /* mais lento no inicio */
+    }
+    #cavalo3 {
+      background: blue;
+      transition-timing-function: ease-out; /* mais lento no final */
+    }
+    #cavalo4 {
+      background: purple;
+      transition-timing-function: ease-in-out; /* mais lento no inicio e no final */
+    }
+
+    .cavalos.ativo div {
+      margin-left: 100%;
+      transform: translateX(-100%);
+    }	
+  </style>
+</head>
+<body>
+  <button>
+    Iniciar Corrida
+  </button>
+  <div class="cavalos">
+    <div id="cavalo1">
+      <span>CAVALO 1</span>
+    </div>
+    <div id="cavalo2">
+      <span> CAVALO 2</span>
+    </div> 
+    <div id="cavalo3">
+      <span> CAVALO 3</span>
+    </div>
+    <div id="cavalo4">
+      <span> CAVALO 4</span>
+    </div>  
+  </div>
+
+  <script>
+    const div = document.querySelector('.cavalos');
+    const button = document.querySelector('button');
+
+    button.addEventListener('click', () => {
+      div.classList.toggle('ativo');
+    });
+  </script>
+</body>
+</html>

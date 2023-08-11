@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .teste, .teste2{ 
+      position: fixed;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: black;
+
+
+    }
+    .teste {
+      top: 0;
+    }
+    .teste2 {
+      bottom: 0;
+    }
+
+    .teste.active {
+      animation-name: nome;
+      animation-duration: 1s;
+      /* animation-delay: 1s; */
+      /* animation-timing-function: linear; */
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .teste2.active {
+      animation-name: nome2;
+      animation-duration: 3s;
+      /* animation-delay: 1s; */
+      /* animation-timing-function: linear; */
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    
+    /* from - to */
+    @keyframes nome {
+      from {
+        background-color: red;
+        left: 0;
+      }
+      to {
+        background-color: blue;
+        left: 100%
+      }
+    }
+
+    /* 0% - 100% */
+    @keyframes nome2 {
+      0% {
+        background-color: yellow;
+        left: 0;
+      }
+      25% {
+        background-color: yellow;
+      }
+      50% {
+        background-color: blue;
+        left: 75%;
+      }
+      75% {
+        background-color: red;
+        left: 25%;
+      }
+      100% {
+        background-color: pink;
+        left: 100%
+      }
+    }
+    button {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="teste">
+
+  </div>
+  <div class="teste2">
+    
+  </div>
+  <button>
+    Toggle Animacao
+  </button>
+  <script>
+    const button = document.querySelector('button');
+    const teste = document.querySelector('.teste');
+    const teste2 = document.querySelector('.teste2');
+
+    button.addEventListener('click', () => {
+      teste.classList.toggle('active');
+      teste2.classList.toggle('active');
+    })
+  </script>
+</body>
+</html>
