@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- importar axios -->
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  
+</head>
+<body>
+  <div>
+    testes
+  </div>
+  <button id="segundo" disabled>anterior</button>
+  <button id="primeiro">próximo</button>
+
+  <script>
+    let paginaAtual = 1;
+    buscarLista(paginaAtual);
+    
+    // buscarLista busca a lista de personagens da API
+    // pagina é o número da página a ser buscada
+    function buscarLista(pagina) {
+      axios.get('https://rickandmortyapi.com/api/character/?page='+ pagina)
+        .then(function (response) {
+          // o body da resposta é acessado pelo response.data
+          const body = response.data
+          console.log(body)
+          // código de sucesso aqui
+        })
+        .catch(function (error) {
+          // código de erro aqui
+        })
+    }
+    document.querySelector('#primeiro').addEventListener('click', function(){
+      paginaAtual++;
+      document.querySelector('#segundo').disabled = false;
+      buscarLista(paginaAtual);
+    })
+    document.querySelector('#segundo').addEventListener('click', function(){
+      paginaAtual--;
+      if(paginaAtual < 1) {
+        document.querySelector('#segundo').disabled = true;
+        paginaAtual = 1
+      } else {
+        buscarLista(paginaAtual);
+      }
+    })
+  </script>
+</body>
+</html>

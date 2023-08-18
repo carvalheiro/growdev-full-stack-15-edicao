@@ -1,0 +1,16 @@
+primary
+primary-subtle
+secondary
+secondary-subtle
+success
+success-subtle
+danger
+danger-subtle
+warning
+warning-subtle
+info
+info-subtle
+light
+light-subtle
+dark
+dark-subtle
